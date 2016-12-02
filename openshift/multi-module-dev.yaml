@@ -11,7 +11,7 @@ parameters:
   required: true
 - description: Git Source reference
   name: SOURCE_REF
-  value: b1.0
+  value: jenkins
   required: true
 - description: Country Service data directory
   name: DATA_DIRECTORY
