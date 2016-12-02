@@ -6,7 +6,6 @@
 		<profile>
 			<id>build.repos</id>
 				<repositories>
-					<!-- 
 					<repository>
 						<snapshots>
 						<enabled>false</enabled>
@@ -21,7 +20,7 @@
 						<name>redhat-all</name>
 						<url>http://nexus-cicd.rhel-cdk.10.1.2.2.xip.io/content/groups/red-hat-all/</url>
 					</repository>
-					-->
+				<!-- 
 				<repository>
 					<id>fusesource.m2</id>
 					<name>FuseSource Community Release Repository</name>
@@ -82,9 +81,9 @@
 						<updatePolicy>never</updatePolicy>
 					</releases>
 				</repository>
+				-->
 			</repositories>
 			<pluginRepositories>
-				<!--
 				<pluginRepository>
 					<snapshots>
 					<enabled>false</enabled>
@@ -99,7 +98,7 @@
 					<name>redhat-all</name>
 					<url>http://nexus-cicd.rhel-cdk.10.1.2.2.xip.io/content/groups/red-hat-all/</url>
 				</pluginRepository>
-				-->
+				<!-- 
 				<pluginRepository>
 					<id>fusesource.m2</id>
 					<name>FuseSource Community Release Repository</name>
@@ -160,6 +159,7 @@
 						<updatePolicy>never</updatePolicy>
 					</releases>
 				</pluginRepository>
+				-->
 			</pluginRepositories>
 		</profile>
 	</profiles>
