@@ -1,9 +1,9 @@
 apiVersion: v1
 kind: BuildConfig
 metadata:
-  name: fis-pipeline
+  name: web-pipeline
   labels:
-    name: fis-pipeline
+    name: web-pipeline
   annotations:
     pipeline.alpha.openshift.io/uses: '[{"name": "web", "namespace": "", "kind": "DeploymentConfig"}]'
 spec:
