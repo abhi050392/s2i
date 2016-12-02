@@ -57,9 +57,6 @@ objects:
           namespace: openshift
       type: Source
     triggers:
-    - imageChange: {}
-      type: ImageChange
-    - type: ConfigChange
   status: {}
     
 - apiVersion: v1
@@ -99,8 +96,6 @@ objects:
       type: Source
     triggers:
     - imageChange: {}
-      type: ImageChange
-    - type: ConfigChange
   status: {}
   
 - apiVersion: v1
@@ -163,7 +158,7 @@ objects:
     test: false
     triggers:
     - imageChangeParams:
-        automatic: true
+        automatic: false
         containerNames:
         - country-service
         from:
@@ -224,7 +219,7 @@ objects:
     test: false
     triggers:
     - imageChangeParams:
-        automatic: true
+        automatic: false
         containerNames:
         - country-web
         from:

@@ -1,0 +1,19 @@
+node('maven') {
+stage 'buildDev'
+openshiftBuild(namespace: 'dev-fis', buildConfig: 'country-service', showBuildLogs: 'true')
+stage 'deployDev'
+openshiftDeploy(namespace: 'dev-fis', deploymentConfig: 'country-service')
+openshiftScale(namespace: 'dev-fis', deploymentConfig: 'country-service',replicaCount: '1')
+openshiftTag(namespace: 'dev-fis', destinationNamespace: 'dev-fis', destStream: 'country-service', destTag: 'test', srcStream: 'country-service', srcTag: 'latest')
+openshiftScale(namespace: 'dev-fis', deploymentConfig: 'country-service',replicaCount: '0')
+stage 'deployTest'
+openshiftDeploy(namespace: 'test', deploymentConfig: 'country-service')
+openshiftScale(namespace: 'dev-fis', deploymentConfig: 'country-service',replicaCount: '1')
+openshiftTag(namespace: 'dev-fis', destinationNamespace: 'dev-fis', destStream: 'country-service', destTag: 'prod', srcStream: 'country-service', srcTag: 'test')
+openshiftScale(namespace: 'dev-fis', deploymentConfig: 'country-service',replicaCount: '0')
+stage 'approval'
+timeout(time: 1, unit: 'HOURS') { input id: 'AppProd', message: 'Approve deployment to Production?', ok: 'OK', submitter: 'admin'}
+stage 'deployProd'
+openshiftDeploy(namespace: 'prod', deploymentConfig: 'country-service')
+openshiftScale(namespace: 'prod', deploymentConfig: 'country-service',replicaCount: '2')
+}

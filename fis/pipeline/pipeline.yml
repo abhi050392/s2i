@@ -1,0 +1,24 @@
+apiVersion: v1
+kind: BuildConfig
+metadata:
+  name: fis-pipeline
+  labels:
+    name: fis-pipeline
+  annotations:
+    pipeline.alpha.openshift.io/uses: '[{"name": "fis", "namespace": "", "kind": "DeploymentConfig"}]'
+spec:
+  source:
+    type: Git
+    git:
+      uri: https://github.com/benemon/multi-module-s2i-project
+      ref: jenkins
+  strategy:
+    type: JenkinsPipeline
+    jenkinsPipelineStrategy:
+      jenkinsfilePath: fis/pipeline/Jenkinsfile 
+  output:
+  resources:
+  postCommit:
+status:
+  lastVersion: 1
+
