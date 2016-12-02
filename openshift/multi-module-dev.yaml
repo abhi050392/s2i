@@ -56,7 +56,6 @@ objects:
           name: fis-java-openshift:latest
           namespace: openshift
       type: Source
-    triggers:
   status: {}
     
 - apiVersion: v1
@@ -94,8 +93,6 @@ objects:
           name: jboss-eap70-openshift:latest
           namespace: openshift
       type: Source
-    triggers:
-    - imageChange: {}
   status: {}
   
 - apiVersion: v1
