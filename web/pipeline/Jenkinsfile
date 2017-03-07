@@ -23,7 +23,7 @@ node('maven')
   
   stage ('approval')
   {
-    timeout(time: 1, unit: 'HOURS') { input id: 'AppProd', message: 'Approve deployment to Production?', ok: 'OK', submitter: 'benemon'}
+    timeout(time: 1, unit: 'HOURS') { input id: 'AppProd', message: 'Approve deployment to Production?', ok: 'OK'}
   }
   
   stage ('deployProd')
