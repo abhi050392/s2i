@@ -10,7 +10,7 @@ parameters:
     required: true
   - description: Git Source reference
     name: SOURCE_REF
-    value: master
+    value: a1
     required: true
   - description: Country Service data directory
     name: DATA_DIRECTORY
