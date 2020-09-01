@@ -151,6 +151,7 @@
 	<modules>
 	    <module>common</module>
 	    <module>fis</module>
+		<module>fis1</module>
 	    <module>web</module>
 	</modules>
 

@@ -10,10 +10,10 @@
 
 	<modelVersion>4.0.0</modelVersion>
 
-	<artifactId>fis</artifactId>
+	<artifactId>fis1</artifactId>
 	<packaging>jar</packaging>
 
-	<name>Red Hat :: OpenShift Blog Example :: FIS</name>
+	<name>Red Hat :: OpenShift Blog Example :: fis1</name>
 	<description>Web module for the OpenShift Maven multi-module example projct</description>
 
 	<dependencyManagement>
@@ -43,12 +43,6 @@
 		<dependency>
 			<groupId>com.openshift.blog.example</groupId>
 			<artifactId>common</artifactId>
-			<version>${com.openshift.blog.example.common.version}</version>
-		</dependency>
-		
-		<dependency>
-			<groupId>com.openshift.blog.example</groupId>
-			<artifactId>fis1</artifactId>
 			<version>${com.openshift.blog.example.common.version}</version>
 		</dependency>
 

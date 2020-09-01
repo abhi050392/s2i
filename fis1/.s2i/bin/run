@@ -1,0 +1,19 @@
+#!/bin/bash
+set -eo pipefail
+
+if [ x"$DATA_DIRECTORY" != "x" ]; then
+    mkdir -p $DATA_DIRECTORY
+    cp /tmp/src/fis1/src/main/resources/data/* $DATA_DIRECTORY
+else
+
+    echo
+    echo "Oops. Did you forget to set the DATA_DIRECTORY environment variable?"
+    echo
+
+    export DATA_DIRECTORY="/tmp/data"
+    mkdir -p $DATA_DIRECTORY
+    echo "Pugh, Pugh, Barney McGrew, Cuthbert, Dibble, Grub" > $DATA_DIRECTORY/data.csv
+fi
+
+
+exec /usr/local/s2i/run
