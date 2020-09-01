@@ -6,11 +6,11 @@ metadata:
 parameters:
   - description: Git Source Repository
     name: SOURCE_REPOSITORY
-    value: 'https://github.com/benemon/multi-module-s2i-project'
+    value: 'https://github.com/abhi050392/s2i'
     required: true
   - description: Git Source reference
     name: SOURCE_REF
-    value: b1.0
+    value: master
     required: true
   - description: Country Service data directory
     name: DATA_DIRECTORY
